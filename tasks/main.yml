@@ -1,0 +1,29 @@
+# Standards: 1.2
+---
+- name: Install required packages
+  loop: "{{ ansible_general_packages + ansible_extra_packages }}"
+  package:
+    name: "{{ item }}"
+    state: present
+  tags:
+    - ansible
+
+- name: Install ansible packages
+  loop: "{{ ansible_general_pips + ansible_extra_pips }}"
+  pip:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.version is defined | ternary('present', 'latest') }}"
+    version: "{{ item.version | default(omit) }}"
+  tags:
+    - ansible
+
+- name: Install molecule packages
+  loop: "{{ ansible_general_molecule + ansible_extra_molecule }}"
+  pip:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.version is defined | ternary('present', 'latest') }}"
+    version: "{{ item.version | default(omit) }}"
+  tags:
+    - ansible
+
+...

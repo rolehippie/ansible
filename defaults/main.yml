@@ -1,0 +1,66 @@
+# Standards: 1.2
+---
+# @var ansible_general_packages:description: List of general packages
+# @var ansible_general_packages:example: >
+# ansible_general_packages:
+#   - foo
+#   - bar
+#   - baz
+# @end
+ansible_general_packages:
+  - python3-pip
+
+# @var ansible_extra_packages:description: List of extra packages
+# @var ansible_extra_packages:example: >
+# ansible_extra_packages:
+#   - foo
+#   - bar
+#   - baz
+# @end
+ansible_extra_packages: []
+
+# @var ansible_general_pips:description: List of general pips
+# @var ansible_general_pips:example: >
+# ansible_general_pips:
+#   - foo
+#   - name: bar
+#     version: 1.0.0
+# @end
+ansible_general_pips:
+  - ansible-lint
+  - ansible-doctor
+  - ansible-later
+
+# @var ansible_extra_pips:description: List of extra pips
+# @var ansible_extra_pips:example: >
+# ansible_extra_pips:
+#   - foo
+#   - name: bar
+#     version: 1.0.0
+# @end
+ansible_extra_pips: []
+
+# @var ansible_general_molecule:description: List of general molecule
+# @var ansible_general_molecule:example: >
+# ansible_general_molecule:
+#   - foo
+#   - name: bar
+#     version: 1.0.0
+# @end
+ansible_general_molecule:
+  - testinfra
+  - molecule
+  - molecule-hetznercloud
+  - molecule-libvirt
+  - molecule-docker
+
+# @var ansible_extra_molecule:description: List of extra molecule
+# @var ansible_extra_molecule:example: >
+# ansible_extra_molecule:
+#   - foo
+#   - name: bar
+#     version: 1.0.0
+# @end
+ansible_extra_molecule: []
+
+...
