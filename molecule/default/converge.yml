@@ -2,6 +2,12 @@
 ---
 - name: Converge
   hosts: all
+  vars:
+    ansible_general_molecule:
+      - testinfra
+      - molecule
+      - molecule-libvirt
+      - molecule-docker
   roles:
     - role: rolehippie.ansible
 
