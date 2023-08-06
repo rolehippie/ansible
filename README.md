@@ -17,12 +17,15 @@ Building and improving this Ansible role have been sponsored by my current and p
 
 - [Requirements](#requirements)
 - [Default Variables](#default-variables)
+  - [ansible_doctor_version](#ansible_doctor_version)
   - [ansible_extra_molecule](#ansible_extra_molecule)
   - [ansible_extra_packages](#ansible_extra_packages)
   - [ansible_extra_pips](#ansible_extra_pips)
   - [ansible_general_molecule](#ansible_general_molecule)
   - [ansible_general_packages](#ansible_general_packages)
   - [ansible_general_pips](#ansible_general_pips)
+  - [ansible_later_version](#ansible_later_version)
+  - [ansible_lint_version](#ansible_lint_version)
 - [Discovered Tags](#discovered-tags)
 - [Dependencies](#dependencies)
 - [License](#license)
@@ -36,6 +39,16 @@ Building and improving this Ansible role have been sponsored by my current and p
 
 
 ## Default Variables
+
+### ansible_doctor_version
+
+Version of ansible-doctor to install
+
+#### Default value
+
+```YAML
+ansible_doctor_version: 2.1.1
+```
 
 ### ansible_extra_molecule
 
@@ -146,9 +159,12 @@ List of general pips
 
 ```YAML
 ansible_general_pips:
-  - ansible-lint
-  - ansible-doctor
-  - ansible-later
+  - name: ansible-lint
+    version: '{{ ansible_lint_version }}'
+  - name: ansible-doctor
+    version: '{{ ansible_doctor_version }}'
+  - name: ansible-later
+    version: '{{ ansible_later_version }}'
 ```
 
 #### Example usage
@@ -158,6 +174,26 @@ ansible_general_pips:
   - foo
   - name: bar
     version: 1.0.0
+```
+
+### ansible_later_version
+
+Version of ansible-later to install
+
+#### Default value
+
+```YAML
+ansible_later_version: 3.3.7
+```
+
+### ansible_lint_version
+
+Version of ansible-lint to install
+
+#### Default value
+
+```YAML
+ansible_lint_version: 6.17.2
 ```
 
 ## Discovered Tags
