@@ -1,5 +1,17 @@
 # Standards: 1.2
 ---
+# @var ansible_lint_version:description: Version of ansible-lint to install
+# renovate: datasource=pypi-releases depName=ansible-lint
+ansible_lint_version: 6.17.2
+
+# @var ansible_doctor_version:description: Version of ansible-doctor to install
+# renovate: datasource=pypi-releases depName=ansible-doctor
+ansible_doctor_version: 2.1.1
+
+# @var ansible_later_version:description: Version of ansible-later to install
+# renovate: datasource=pypi-releases depName=ansible-later
+ansible_later_version: 3.3.7
+
 # @var ansible_general_packages:description: List of general packages
 # @var ansible_general_packages:example: >
 # ansible_general_packages:
@@ -27,9 +39,12 @@ ansible_extra_packages: []
 #     version: 1.0.0
 # @end
 ansible_general_pips:
-  - ansible-lint
-  - ansible-doctor
-  - ansible-later
+  - name: ansible-lint
+    version: "{{ ansible_lint_version }}"
+  - name: ansible-doctor
+    version: "{{ ansible_doctor_version }}"
+  - name: ansible-later
+    version: "{{ ansible_later_version }}"
 
 # @var ansible_extra_pips:description: List of extra pips
 # @var ansible_extra_pips:example: >
