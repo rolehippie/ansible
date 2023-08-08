@@ -1,9 +1,5 @@
 # Standards: 1.2
 ---
-# @var ansible_lint_version:description: Version of ansible-lint to install
-# renovate: datasource=pypi-releases depName=ansible-lint
-ansible_lint_version: 6.17.2
-
 # @var ansible_doctor_version:description: Version of ansible-doctor to install
 # renovate: datasource=pypi-releases depName=ansible-doctor
 ansible_doctor_version: 2.1.1
@@ -11,6 +7,10 @@ ansible_doctor_version: 2.1.1
 # @var ansible_later_version:description: Version of ansible-later to install
 # renovate: datasource=pypi-releases depName=ansible-later
 ansible_later_version: 3.3.7
+
+# @var ansible_lint_version:description: Version of ansible-lint to install
+# renovate: datasource=pypi-releases depName=ansible-lint
+ansible_lint_version: 6.17.2
 
 # @var ansible_general_packages:description: List of general packages
 # @var ansible_general_packages:example: >
@@ -39,12 +39,12 @@ ansible_extra_packages: []
 #     version: 1.0.0
 # @end
 ansible_general_pips:
-  - name: ansible-lint
-    version: "{{ ansible_lint_version }}"
   - name: ansible-doctor
     version: "{{ ansible_doctor_version }}"
   - name: ansible-later
-    version: "{{ ansible_later_version }}"
+    version: "{{ '2.0.23' if ansible_python_version is version('3.8.100', '<=') else ansible_later_version }}"
+  - name: ansible-lint
+    version: "{{ '6.13.1' if ansible_python_version is version('3.8.100', '<=') else ansible_lint_version }}"
 
 # @var ansible_extra_pips:description: List of extra pips
 # @var ansible_extra_pips:example: >
@@ -67,7 +67,7 @@ ansible_general_molecule:
   - molecule
   - molecule-hetznercloud
   - molecule-libvirt
-  - molecule-docker
+  - molecule-plugins
 
 # @var ansible_extra_molecule:description: List of extra molecule
 # @var ansible_extra_molecule:example: >
