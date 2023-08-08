@@ -8,11 +8,11 @@ dependency:
     ANSIBLE_GALAXY_DISPLAY_PROGRESS: "false"
 
 driver:
-  name: docker
+  name: containers
 
 platforms:
   - name: ansible-ubuntu-22
-    image: geerlingguy/docker-ubuntu2204-ansible:latest
+    image: docker.io/geerlingguy/docker-ubuntu2204-ansible:latest
     hostname: ubuntu
     privileged: True
     pre_build_image: True
@@ -27,7 +27,7 @@ platforms:
     environment:
       container: docker
   - name: ansible-ubuntu-20
-    image: geerlingguy/docker-ubuntu2004-ansible:latest
+    image: docker.io/geerlingguy/docker-ubuntu2004-ansible:latest
     hostname: ubuntu
     privileged: True
     pre_build_image: True
