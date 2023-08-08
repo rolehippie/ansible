@@ -2,7 +2,7 @@
 
 [![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&amp;logoColor=white)](https://github.com/rolehippie/ansible)
 [![General Workflow](https://github.com/rolehippie/ansible/actions/workflows/general.yml/badge.svg)](https://github.com/rolehippie/ansible/actions/workflows/general.yml)
-[![Readme Workflow](https://github.com/rolehippie/ansible/actions/workflows/readme.yml/badge.svg)](https://github.com/rolehippie/ansible/actions/workflows/readme.yml)
+[![Readme Workflow](https://github.com/rolehippie/ansible/actions/workflows/docs.yml/badge.svg)](https://github.com/rolehippie/ansible/actions/workflows/docs.yml)
 [![Galaxy Workflow](https://github.com/rolehippie/ansible/actions/workflows/galaxy.yml/badge.svg)](https://github.com/rolehippie/ansible/actions/workflows/galaxy.yml)
 [![License: Apache-2.0](https://img.shields.io/github/license/rolehippie/ansible)](https://github.com/rolehippie/ansible/blob/master/LICENSE)
 [![Ansible Role](https://img.shields.io/badge/role-rolehippie.ansible-blue)](https://galaxy.ansible.com/rolehippie/ansible)
@@ -119,7 +119,7 @@ ansible_general_molecule:
   - molecule
   - molecule-hetznercloud
   - molecule-libvirt
-  - molecule-docker
+  - molecule-plugins
 ```
 
 #### Example usage
@@ -159,12 +159,14 @@ List of general pips
 
 ```YAML
 ansible_general_pips:
-  - name: ansible-lint
-    version: '{{ ansible_lint_version }}'
   - name: ansible-doctor
     version: '{{ ansible_doctor_version }}'
   - name: ansible-later
-    version: '{{ ansible_later_version }}'
+    version: "{{ '2.0.23' if ansible_python_version is version('3.8.100', '<=') else\
+      \ ansible_later_version }}"
+  - name: ansible-lint
+    version: "{{ '6.13.1' if ansible_python_version is version('3.8.100', '<=') else\
+      \ ansible_lint_version }}"
 ```
 
 #### Example usage
