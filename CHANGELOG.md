@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/rolehippie/ansible/compare/v1.1.0...v1.2.0) (2023-08-14)
+
+
+### Features
+
+* add loop labels ([b6eee7a](https://github.com/rolehippie/ansible/commit/b6eee7a8614a8bd3ae2436b723cd92f4c4b9f17c))
+* pin later and lint to older versions for python 3.8 ([dd6b959](https://github.com/rolehippie/ansible/commit/dd6b959e6bd2ad070347b6bc3a0ecc7699af403d))
+
 ## [1.1.0](https://github.com/rolehippie/ansible/compare/v1.0.0...v1.1.0) (2023-08-07)
 
 
