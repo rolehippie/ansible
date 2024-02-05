@@ -1,4 +1,3 @@
-# Standards: 1.2
 ---
 - name: Install required packages
   loop: "{{ ansible_general_packages + ansible_extra_packages }}"
