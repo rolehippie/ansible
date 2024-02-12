@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.0](https://github.com/rolehippie/ansible/compare/v1.2.0...v2.0.0) (2024-02-12)
+
+
+### Features
+
+* used full qualified collection names ([8194a1a](https://github.com/rolehippie/ansible/commit/8194a1aac733c7f9c2b8a2e689cc91ffe9a99bf9))
+
 ## [1.2.0](https://github.com/rolehippie/ansible/compare/v1.1.0...v1.2.0) (2023-08-14)
 
 
