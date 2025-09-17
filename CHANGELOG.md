@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/rolehippie/ansible/compare/v2.0.0...v2.1.0) (2025-09-17)
+
+
+### Features
+
+* apply new repo structure and update linting ([038cdf5](https://github.com/rolehippie/ansible/commit/038cdf5f1dbf88567cce96b071543feb61a5b90e))
+
 ## [2.0.0](https://github.com/rolehippie/ansible/compare/v1.2.0...v2.0.0) (2024-02-12)
 
 
