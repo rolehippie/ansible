@@ -2,11 +2,8 @@
 - name: Converge
   hosts: all
   vars:
-    ansible_general_pips:
-      - ansible-lint
     ansible_general_molecule:
       - testinfra
-      - molecule
   roles:
     - role: rolehippie.ansible
 
