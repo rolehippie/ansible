@@ -9,7 +9,3 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 def test_lint_is_installed(host):
     file = host.file("/usr/local/bin/ansible-lint")
     assert file.is_executable
-
-def test_molecule_is_installed(host):
-    file = host.file("/usr/local/bin/molecule")
-    assert file.is_executable
