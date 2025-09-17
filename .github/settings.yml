@@ -1,6 +1,6 @@
 ---
 repository:
-  name: wezterm
+  name: ansible
   description: Ansible role to install tools around ansible role development
   topics: ansible, role, ansible-role, hacktoberfest
 
