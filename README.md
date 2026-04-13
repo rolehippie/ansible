@@ -161,11 +161,9 @@ ansible_general_pips:
   - name: ansible-doctor
     version: '{{ ansible_doctor_version }}'
   - name: ansible-later
-    version: "{{ '2.0.23' if ansible_python_version is version('3.8.100', '<=') else
-      ansible_later_version }}"
+    version: "{{ '2.0.23' if ansible_python_version is version('3.8.100', '<=') else ansible_later_version }}"
   - name: ansible-lint
-    version: "{{ '6.13.1' if ansible_python_version is version('3.8.100', '<=') else
-      ansible_lint_version }}"
+    version: "{{ '6.13.1' if ansible_python_version is version('3.8.100', '<=') else ansible_lint_version }}"
 ```
 
 #### Example usage
