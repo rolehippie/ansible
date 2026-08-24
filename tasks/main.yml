@@ -15,6 +15,7 @@
     name: "{{ item.name | default(item) }}"
     state: "{{ item.version is defined | ternary('present', 'latest') }}"
     version: "{{ item.version | default(omit) }}"
+    break_system_packages: true
   tags:
     - ansible
 
@@ -26,6 +27,7 @@
     name: "{{ item.name | default(item) }}"
     state: "{{ item.version is defined | ternary('present', 'latest') }}"
     version: "{{ item.version | default(omit) }}"
+    break_system_packages: true
   tags:
     - ansible
 
